@@ -28,11 +28,22 @@ function createPost(post) {
   });
 }
 
+// Handling Promises with .then() and .catch()
 createPost({ title: "Post Three", body: "This is post three" })
   .then(getPosts)
   .catch((err) => {
     console.log(err);
   });
+
+// Handling Promises with Async/Await
+// Put the code which returns a promise in a function and make it async
+// 'Await' the call that returns the promise.
+// Subsequent lines will only be run after the await is done.
+async function init() {
+  await createPost({ title: "Post Four", body: "This is post four" });
+  getPosts();
+}
+init();
 
 // Promise.all()
 const promise1 = Promise.resolve("Hello world");
