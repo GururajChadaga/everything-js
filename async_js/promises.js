@@ -22,7 +22,7 @@ function createPost(post) {
       if (!error) {
         resolve();
       } else {
-        reject();
+        reject("Error: Something went wrong");
       }
     }, 2000);
   });
